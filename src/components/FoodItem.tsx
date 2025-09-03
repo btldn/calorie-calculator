@@ -1,3 +1,5 @@
+import styles from './FoodItem.module.css'
+
 type food = {
   id: string;
   meal: string;
@@ -11,8 +13,8 @@ type food = {
 function FoodItem(props: food) {
   return (
     <>
-      <p>{props.meal}</p>
-      <div>
+      <div className={styles.diary__meal}>
+        <p>{props.meal}</p>
         <p>{props.proteins}</p>
         <p>{props.fats}</p>
         <p>{props.carbs}</p>

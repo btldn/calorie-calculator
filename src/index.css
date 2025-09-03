@@ -2,12 +2,16 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
 }
 
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  background-color: #e5e6ee;
+  /* font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; */
 }
 
 a {

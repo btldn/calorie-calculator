@@ -1,6 +1,9 @@
 import React, { createContext, useState, useContext } from "react"
 import type { PropsWithChildren } from "react"
+import { foods } from "./foods"
+import { userFoods } from "./userFoods"
 
+const allFoods = [...foods, ...userFoods];
 
 interface Meal {
   id: string,
@@ -14,7 +17,7 @@ interface Meal {
 
 interface FoodContextType {
   meals: Meal[];
-  addMeal: (meal: Meal) => void;
+  addMeal: (foodId: string, volume: number) => void;
   removeMeal: (id: string) => void;
   updateMeal: (id: string, updatedMeal: Meal) => void;
 }
@@ -32,8 +35,24 @@ function FoodProvider({ children }: PropsWithChildren) {
     { id: 'meal-1', name: 'Рис с курой', volume: 100, proteins: 14, carbs: 20, fats: 43, kcal: 412 }
   ]);
 
-  const addMeal = (meal: Meal) => {
-    setMeals(prev => [...prev, meal]);
+  const addMeal = (foodId: string, volume: number) => {
+    const selectedFood = allFoods.find(food => food.id === foodId)
+
+    if (selectedFood) {
+      setMeals(prev => [...prev,
+      {
+        id: selectedFood.id,
+        name: selectedFood.name,
+        volume: volume,
+        proteins: (selectedFood.proteins100 / 100 * volume),
+        carbs: (selectedFood.carbs100 / 100 * volume),
+        fats: (selectedFood.fats100 / 100 * volume),
+        kcal: (selectedFood.kcal100 / 100 * volume)
+      }
+      ]);
+    }
+
+
   };
 
   const removeMeal = (id: string) => {
@@ -57,7 +76,6 @@ function FoodProvider({ children }: PropsWithChildren) {
       {children}
     </FoodContext.Provider>
   )
-
 }
 
 export const useFood = () => {

@@ -1,0 +1,4 @@
+.diary__meal {
+  display: flex;
+  border: red 1px solid;
+}
