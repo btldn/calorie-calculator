@@ -1,7 +1,44 @@
-.diary__mealList {
-  max-width: 800px;
+.diary__wrapper {
+  max-width: 810px;
+  margin: 0 auto;
+}
+
+.diary__list {
+  max-width: 810px;
   background-color: white;
-  padding: 15px;
+  padding: 20px;
   border-radius: 12px;
   margin: 0 auto;
+}
+
+.diary__listTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  padding-left: 10px;
+}
+
+.diary__listHeader {
+  display: flex;
+  font-size: 12px;
+  color: rgb(140, 140, 140);
+  margin-bottom: 15px;
+  padding: 0px 10px;
+}
+
+.diary__listHeaderMeal {
+  min-width: 250px;
+}
+
+.diary__listHeaderFats, 
+.diary__listHeaderProteins,
+.diary__listHeaderCarbs,
+.diary__listHeaderVolume  {
+  min-width: 100px;
+  text-align: center;
+} 
+
+.diary__listHeaderKcal {
+  min-width: 100px;
+  text-align: left;  
 }

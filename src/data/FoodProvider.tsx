@@ -31,8 +31,8 @@ const FoodContext = createContext<FoodContextType>({
 
 function FoodProvider({ children }: PropsWithChildren) {
   const [meals, setMeals] = useState<Meal[]>([
-    { id: 'meal-0', name: 'Чипсы', volume: 100, proteins: 14, carbs: 20, fats: 43, kcal: 612 },
-    { id: 'meal-1', name: 'Рис с курой', volume: 100, proteins: 14, carbs: 20, fats: 43, kcal: 412 }
+    // { id: 'meal-0', name: 'Чипсы', volume: 100, proteins: 14, carbs: 20, fats: 43, kcal: 612 },
+    // { id: 'meal-1', name: 'Рис с курой', volume: 100, proteins: 14, carbs: 20, fats: 43, kcal: 412 }
   ]);
 
   const addMeal = (foodId: string, volume: number) => {
@@ -44,10 +44,10 @@ function FoodProvider({ children }: PropsWithChildren) {
         id: selectedFood.id,
         name: selectedFood.name,
         volume: volume,
-        proteins: (selectedFood.proteins100 / 100 * volume),
-        carbs: (selectedFood.carbs100 / 100 * volume),
-        fats: (selectedFood.fats100 / 100 * volume),
-        kcal: (selectedFood.kcal100 / 100 * volume)
+        proteins: Math.ceil(selectedFood.proteins100 / 100 * volume),
+        carbs: Math.ceil(selectedFood.carbs100 / 100 * volume),
+        fats: Math.ceil(selectedFood.fats100 / 100 * volume),
+        kcal: Math.ceil(selectedFood.kcal100 / 100 * volume)
       }
       ]);
     }

@@ -1,4 +1,33 @@
 .diary__meal {
   display: flex;
-  border: red 1px solid;
+  padding: 15px 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-size: 14px;
 }
+
+.diary__meal:last-child {
+  margin-bottom: 0px;
+}
+
+.diary__meal:nth-child(odd) {
+  background-color: #e5e6ee;
+}
+
+.diary__mealName {
+  min-width: 250px;
+}
+
+.diary__mealFats, 
+.diary__mealProteins,
+.diary__mealCarbs,
+.diary__mealVolume  {
+  min-width: 100px;
+  text-align: center;
+} 
+
+.diary__mealKcal {
+  min-width: 100px;
+  text-align: left;  
+}
+

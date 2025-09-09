@@ -1,5 +1,35 @@
 .diary__inputMeal {
-  max-width: 800px;
-  border: 1px black solid;
-  margin: 0 auto;
+  max-width: 810px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.diary__inputMealName {
+  width: 500px;
+  background-color: white;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+}
+
+.diary__inputMealVolume {
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  padding-left: 10px;
+  font-size: 14px;
+  width: 200px;
+}
+
+.diary__inputMealSubmit {
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  background-color: rgb(31, 79, 255);
+  color: white;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 10px;
 }

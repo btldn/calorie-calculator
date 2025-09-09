@@ -1,13 +1,16 @@
-type food = {
+type Food = {
+  id: string; name: string;
+  kcal100: number; proteins100: number; fats100: number; carbs100: number;
+};
+
+type AddOption = {
   id: string;
   name: string;
-  carbs100: number;
-  fats100: number;
-  proteins100: number;
-  kcal100: number;
 }
 
-export const foods: food[] = [
+type Option = Food | AddOption;
+
+export const foods: Option[] = [
   {
     id: '1',
     name: 'яблоко',
@@ -80,4 +83,16 @@ export const foods: food[] = [
     fats100: 0.6,
     carbs100: 3.4,
   },
+  {
+    id: '10',
+    name: 'двойной биг спэшл',
+    kcal100: 248,
+    proteins100: 16,
+    fats100: 15,
+    carbs100: 11,
+  },
+  { 
+    id: "add_new", 
+    name: "Добавить своё..." 
+  }
 ];
